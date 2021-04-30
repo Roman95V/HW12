@@ -31,7 +31,7 @@ namespace HW11_NT
         {
             Random email = new Random();
             int _email = email.Next(100, 999);
-            Console.WriteLine(_email);
+            
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join/");
             
             _webDriver.FindElement(By.CssSelector("[name = first_name]")).SendKeys("Will");
@@ -60,7 +60,7 @@ namespace HW11_NT
         {
             Random email = new Random();
             int _email = email.Next(100, 999);
-            Console.WriteLine(_email);
+
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join/");
 
             _webDriver.FindElement(By.CssSelector("[name = first_name]")).SendKeys("Will");
@@ -81,7 +81,9 @@ namespace HW11_NT
 
             _webDriver.FindElement(By.CssSelector("[name = company_website]")).SendKeys("wweer.com");
 
-            _webDriver.FindElement(By.CssSelector("[name = location]")).SendKeys("Dallas, TX, USA");
+            _webDriver.FindElement(By.CssSelector("[name = location]")).SendKeys("d");
+
+            _webDriver.FindElement(By.CssSelector("[class=pac-matched]")).Click();
 
             _webDriver.FindElement(By.CssSelector("[name = industry]")).Click();
 
