@@ -31,8 +31,8 @@ namespace HW11_NT
             [Test]
             public void RegistrationPartOne()
             {
-                //email  WillSmith@gmail.com
-                //password 123Qwe@321
+                //email  WillSmith@gmail.com  Oksana89pys@gmail.com
+                //password 123Qwe@321  Oks@n@89
 
                 _webDriver.Navigate().GoToUrl("https://newbookmodels.com/auth/signin");
 
@@ -46,8 +46,8 @@ namespace HW11_NT
 
                 Thread.Sleep(3000);
 
-                Assert.Equals("https://newbookmodels.com/join/company", result);
-
+                Assert.AreEqual("https://newbookmodels.com/explore", result);
+            
             }
         }
     }

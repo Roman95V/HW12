@@ -52,15 +52,16 @@ namespace HW11_NT
 
             Thread.Sleep(3000);
 
-            Assert.Equals("https://newbookmodels.com/join/company", result);
+            Assert.AreEqual("https://newbookmodels.com/join/company", result);
           
         }
+
         [Test]
         public void RegistrationPartTwo()
         {
             Random email = new Random();
             int _email = email.Next(100, 999);
-
+            
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join/");
 
             _webDriver.FindElement(By.CssSelector("[name = first_name]")).SendKeys("Will");
@@ -83,18 +84,25 @@ namespace HW11_NT
 
             _webDriver.FindElement(By.CssSelector("[name = location]")).SendKeys("d");
 
+            Thread.Sleep(3000);
+
             _webDriver.FindElement(By.CssSelector("[class=pac-matched]")).Click();
 
             _webDriver.FindElement(By.CssSelector("[name = industry]")).Click();
 
+            Thread.Sleep(3000);
+
             _webDriver.FindElement(By.CssSelector("[role = option]")).Click();
 
             _webDriver.FindElement(By.CssSelector(".SignupCompanyForm__submitButton--3mz3p")).Click();
+
             Thread.Sleep(3000);
 
             var result = _webDriver.Url;
 
-            Assert.Equals("https://newbookmodels.com/explore", result);
+            Thread.Sleep(3000);
+
+            Assert.AreEqual("https://newbookmodels.com/explore", result);
 
         }
     }
