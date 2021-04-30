@@ -27,7 +27,7 @@ namespace HW11_NT
             _webDriver.Quit();
         }
         [Test]
-        public void Test1()
+        public void RegistrationPartOne()
         {
             Random email = new Random();
             int _email = email.Next(100, 999);
@@ -38,52 +38,62 @@ namespace HW11_NT
           
            _webDriver.FindElement(By.CssSelector("[name = last_name]")).SendKeys("Smith");
 
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(2) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys($"sosixo{_email}5@quossum.com");
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(4) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("4444444444");
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(3) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("@123Will@");
+            _webDriver.FindElement(By.CssSelector("[name = email]")).SendKeys($"sosixo{_email}5@quossum.com");
 
-             _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(3) > div:nth-child(2) > label:nth-child(1) > input:nth-child(2)")).SendKeys("@123Will@");
+            _webDriver.FindElement(By.CssSelector("[name = phone_number]")).SendKeys("4444444444");
+
+            _webDriver.FindElement(By.CssSelector("[name = password]")).SendKeys("@123Will@");
+
+             _webDriver.FindElement(By.CssSelector("[name = password_confirm]")).SendKeys("@123Will@");
             
             _webDriver.FindElement(By.CssSelector(".SignupForm__submitButton--1m1C2")).Click();
+
             var result = _webDriver.Url;
+
             Thread.Sleep(3000);
-            Assert.Equals("https://newbookmodels.com/join", result);
-            
-            //  _webDriver.FindElement(By.CssSelector("button.button:nth-child(2)")).Click();
-            //  var fristPosition = _webDriver.FindElement(By.CssSelector("li.catalog-grid__cell:nth-child(1) > app-goods-tile-default:nth-child(1) > div:nth-child(1) > div:nth-child(2) > a:nth-child(5) > span:nth-child(1)"));
-            //  Assert.AreEqual("Шоколадний набір до Великодня TRUFFLE BRO, пасхальний кролик №3, 160 грам", fristPosition.Text.Trim());
+
+            Assert.Equals("https://newbookmodels.com/join/company", result);
+          
         }
         [Test]
-        public void Test2()
+        public void RegistrationPartTwo()
         {
             Random email = new Random();
             int _email = email.Next(100, 999);
             Console.WriteLine(_email);
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join/");
 
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(1) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("Will");
+            _webDriver.FindElement(By.CssSelector("[name = first_name]")).SendKeys("Will");
 
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(1) > div:nth-child(2) > label:nth-child(1) > input:nth-child(2)")).SendKeys("Smith");
+            _webDriver.FindElement(By.CssSelector("[name = last_name]")).SendKeys("Smith");
 
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(2) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("sosixof555@quossum.com");
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(4) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("4444444444");
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(3) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("@123Will@");
+            _webDriver.FindElement(By.CssSelector("[name = email]")).SendKeys($"sosixo{_email}5@quossum.com");
 
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(3) > div:nth-child(2) > label:nth-child(1) > input:nth-child(2)")).SendKeys("@123Will@");
+            _webDriver.FindElement(By.CssSelector("[name = phone_number]")).SendKeys("4444444444");
+
+            _webDriver.FindElement(By.CssSelector("[name = password]")).SendKeys("@123Will@");
+
+            _webDriver.FindElement(By.CssSelector("[name = password_confirm]")).SendKeys("@123Will@");
 
             _webDriver.FindElement(By.CssSelector(".SignupForm__submitButton--1m1C2")).Click();
 
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25: nth - child(1) > div:nth - child(1) > label:nth - child(1) > input:nth - child(2)")).SendKeys("WWWWW");
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25: nth - child(1) > div:nth - child(1) > label:nth - child(1) > input:nth - child(2)")).SendKeys("wweer.com");
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25: nth - child(1) > div:nth - child(1) > label:nth - child(1) > input:nth - child(2)")).SendKeys("3333 Echols Road, Cumming, GA, USA");
+            _webDriver.FindElement(By.CssSelector("[name = company_name]")).SendKeys("WWWWW");
+
+            _webDriver.FindElement(By.CssSelector("[name = company_website]")).SendKeys("wweer.com");
+
+            _webDriver.FindElement(By.CssSelector("[name = location]")).SendKeys("Dallas, TX, USA");
+
+            _webDriver.FindElement(By.CssSelector("[name = industry]")).Click();
+
+            _webDriver.FindElement(By.CssSelector("[role = option]")).Click();
 
             _webDriver.FindElement(By.CssSelector(".SignupCompanyForm__submitButton--3mz3p")).Click();
             Thread.Sleep(3000);
-           // Assert.Equals("https://newbookmodels.com/join", result);
 
-            //  _webDriver.FindElement(By.CssSelector("button.button:nth-child(2)")).Click();
-            //  var fristPosition = _webDriver.FindElement(By.CssSelector("li.catalog-grid__cell:nth-child(1) > app-goods-tile-default:nth-child(1) > div:nth-child(1) > div:nth-child(2) > a:nth-child(5) > span:nth-child(1)"));
-            //  Assert.AreEqual("Шоколадний набір до Великодня TRUFFLE BRO, пасхальний кролик №3, 160 грам", fristPosition.Text.Trim());
+            var result = _webDriver.Url;
+
+            Assert.Equals("https://newbookmodels.com/explore", result);
+
         }
     }
 }
