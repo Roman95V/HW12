@@ -29,14 +29,16 @@ namespace HW11_NT
         [Test]
         public void Test1()
         {
-
+            Random email = new Random();
+            int _email = email.Next(100, 999);
+            Console.WriteLine(_email);
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join/");
             
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(1) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("Will");
+            _webDriver.FindElement(By.CssSelector("[name = first_name]")).SendKeys("Will");
           
-           _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(1) > div:nth-child(2) > label:nth-child(1) > input:nth-child(2)")).SendKeys("Smith");
+           _webDriver.FindElement(By.CssSelector("[name = last_name]")).SendKeys("Smith");
 
-            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(2) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("sosixof555@quossum.com");
+            _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(2) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys($"sosixo{_email}5@quossum.com");
             _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(4) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("4444444444");
             _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(3) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("@123Will@");
 
@@ -54,7 +56,9 @@ namespace HW11_NT
         [Test]
         public void Test2()
         {
-
+            Random email = new Random();
+            int _email = email.Next(100, 999);
+            Console.WriteLine(_email);
             _webDriver.Navigate().GoToUrl("https://newbookmodels.com/join/");
 
             _webDriver.FindElement(By.CssSelector("div.SignupFormLayout__fieldRow--bGt25:nth-child(1) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)")).SendKeys("Will");
