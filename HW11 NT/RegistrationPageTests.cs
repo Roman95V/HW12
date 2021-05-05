@@ -11,7 +11,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace HW11_NT
 {
-    class RegistrationPageTests
+    public class RegistrationPageTests
     {
         private IWebDriver _webDriver;
         [SetUp]
@@ -31,12 +31,22 @@ namespace HW11_NT
         [Test]
         public void CheckTheTransitionToTheSecondStageOfRegistration()
         {
+            Random email = new Random();
+            int _email = email.Next(100, 999);
+
             var registrationPage = new RegistrationPage(_webDriver);
+            registrationPage.OpenPage()
+                .SetFirstName("Will")
+                .SetLastName("Smith")
+                .SetEmail($"sosixo{_email}5@quossum.com")
+                .SetMobile("4444444444")
+                .SetPassword("@123Will@")
+                .SetConfirmPassword("@123Will@")
+                .ClickLoginButton();
 
+            var result = _webDriver.Url;
 
-            var actualMessage = signInPage.GetUserAccountBlockMessage();
-
-            Assert.AreEqual("User account is blocked.", actualMessage);
+            Assert.AreEqual("https://newbookmodels.com/join/company", result);
 
         }
     }

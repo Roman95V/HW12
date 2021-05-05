@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HW11_NT
 {
-    class RegistrationPage
+    public class RegistrationPage
     {
         private readonly IWebDriver _webDriver;
 
@@ -19,7 +19,10 @@ namespace HW11_NT
         private By _passwordConfirmField = By.CssSelector("[name = password_confirm]");
         private By _loginButton = By.CssSelector(".SignupForm__submitButton--1m1C2");
 
-       // private By _accountBlockMassage = By.CssSelector("div.FormErrorText__error---nzyq:nth-child(1) > div:nth-child(1)");
+        private By _companyNameField = By.CssSelector("[name = company_name]");
+        private By _passwordField = By.CssSelector("[name = company_website]");
+        private By _passwordConfirmField = By.CssSelector("[name = password_confirm]");
+        // private By _accountBlockMassage = By.CssSelector("div.FormErrorText__error---nzyq:nth-child(1) > div:nth-child(1)");
 
         public RegistrationPage(IWebDriver webDriver)
         {

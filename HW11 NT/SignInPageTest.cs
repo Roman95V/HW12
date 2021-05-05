@@ -11,7 +11,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace HW11_NT
 {
-    class SingInPageTest
+    public class SingInPageTest
     {
         private IWebDriver _webDriver;
         [SetUp]
