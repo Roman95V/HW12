@@ -34,10 +34,13 @@ namespace HW11_NT
             //email  WillSmith@gmail.com  Oksana89pys@gmail.com
             //password 123Qwe@321  Oks@n@89
             var signInPage = new SignInPage(_webDriver);
-            si
+            signInPage.OpenPage()
+                .SetEmail("WillSmith@gmail.com")
+                .SetPassword("123Qwe@321")
+                .ClickLoginButton();
+                var actualMessage = signInPage.GetUserAccountBlockMessage();
             
-
-            Assert.AreEqual("https://newbookmodels.com/explore", );
+            Assert.AreEqual("User account is blocked.", actualMessage );
 
         }
     }

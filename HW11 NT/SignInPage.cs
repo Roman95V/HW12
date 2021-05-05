@@ -13,7 +13,7 @@ namespace HW11_NT
         private By _emailField = By.CssSelector("input[type=email]");
         private By _passwordField = By.CssSelector("input[type=password]");
         private By _loginButton = By.CssSelector(".SignInForm__submitButton--cUdOV");
-        private By _accountBlockMassage = By.CssSelector("//*[contains(@class, 'SignInForm__submitButton')]/../../div[contains(@class,'PageForm')][last()]");
+        private By _accountBlockMassage = By.CssSelector("div.FormErrorText__error---nzyq:nth-child(1) > div:nth-child(1)");
 
         public SignInPage(IWebDriver webDriver)
         {
