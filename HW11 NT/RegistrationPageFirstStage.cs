@@ -17,12 +17,7 @@ namespace HW11_NT
         private By _mobileField = By.CssSelector("[name = phone_number]");
         private By _passwordField = By.CssSelector("[name = password]");
         private By _passwordConfirmField = By.CssSelector("[name = password_confirm]");
-        private By _loginButton = By.CssSelector(".SignupForm__submitButton--1m1C2");
-
-        private By _companyNameField = By.CssSelector("[name = company_name]");
-        private By _passwordField = By.CssSelector("[name = company_website]");
-        private By _passwordConfirmField = By.CssSelector("[name = password_confirm]");
-        // private By _accountBlockMassage = By.CssSelector("div.FormErrorText__error---nzyq:nth-child(1) > div:nth-child(1)");
+        private By _nextButton = By.CssSelector(".SignupForm__submitButton--1m1C2");
 
         public RegistrationPage(IWebDriver webDriver)
         {
@@ -68,7 +63,7 @@ namespace HW11_NT
         }
         public void ClickLoginButton()
         {
-            _webDriver.FindElement(_loginButton).Click();
+            _webDriver.FindElement(_nextButton).Click();
         }
     }
 }

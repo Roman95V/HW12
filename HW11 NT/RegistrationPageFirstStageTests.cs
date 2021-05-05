@@ -11,7 +11,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace HW11_NT
 {
-    public class RegistrationPageTests
+    public class RegistrationPageFirstStageTests
     {
         private IWebDriver _webDriver;
         [SetUp]
@@ -34,7 +34,7 @@ namespace HW11_NT
             Random email = new Random();
             int _email = email.Next(100, 999);
 
-            var registrationPage = new RegistrationPage(_webDriver);
+            var registrationPage = new RegistrationPageFirstStage(_webDriver);
             registrationPage.OpenPage()
                 .SetFirstName("Will")
                 .SetLastName("Smith")
