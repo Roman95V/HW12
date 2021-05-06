@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HW11_NT
+namespace NewbookTests
 {
-    class RegistrationPageTwoStage
+    public class RegistrationPageTwoStage
     {
         private readonly IWebDriver _webDriver;
 

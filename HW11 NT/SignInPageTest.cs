@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
-namespace HW11_NT
+namespace NewbookTests
 {
     public class SingInPageTest
     {
